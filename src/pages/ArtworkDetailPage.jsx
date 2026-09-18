@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Eye, MessageCircle, ShieldCheck, Truck, ArrowLeft, Sparkles, CheckCircle2, Share2 } from 'lucide-react';
 import { ARTWORKS_DATA } from '../data/artworks';
 
-export default function ArtworkDetailPage({ slug, navigateTo, onOpenWallModal, onOpenInquiry }) {
+export default function ArtworkDetailPage({ slug, navigateTo, onOpenInquiry }) {
   const artwork = ARTWORKS_DATA.find((a) => a.slug === slug || a.id === slug) || ARTWORKS_DATA[0];
   const [zoomActive, setZoomActive] = useState(false);
 
@@ -48,24 +48,7 @@ export default function ArtworkDetailPage({ slug, navigateTo, onOpenWallModal, o
             </div>
           </div>
 
-          {/* Quick Room Visualizer Trigger Banner */}
-          <div className="p-4 rounded-2xl glass-panel border border-amber-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex shrink-0 items-center justify-center">
-                <Eye className="w-5 h-5 text-amber-400" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-white">Visualize On Your Living Room Wall</p>
-                <p className="text-[10px] text-stone-400">Test painting scale & frame styles on different wall shades.</p>
-              </div>
-            </div>
-            <button
-              onClick={() => onOpenWallModal(artwork)}
-              className="w-full sm:w-auto px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-400/40 text-xs font-bold uppercase tracking-wider hover:bg-amber-500 hover:text-black transition-all"
-            >
-              Test On Wall
-            </button>
-          </div>
+
         </div>
 
         {/* Right: Painting Details & Purchase Funnel */}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, Filter, Eye, MessageCircle, ArrowRight } from 'lucide-react';
 import { ARTWORKS_DATA } from '../data/artworks';
 
-export default function CollectionPage({ navigateTo, onOpenWallModal, onOpenInquiry }) {
+export default function CollectionPage({ navigateTo, onOpenInquiry }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [availabilityFilter, setAvailabilityFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -162,13 +162,7 @@ export default function CollectionPage({ navigateTo, onOpenWallModal, onOpenInqu
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => onOpenWallModal(art)}
-                      className="p-2.5 rounded-xl bg-stone-800 text-stone-300 hover:text-amber-300 hover:bg-stone-700 transition-colors"
-                      title="Visualize on Room Wall"
-                    >
-                      <Eye className="w-4 h-4" />
-                    </button>
+
                     <button
                       onClick={() => navigateTo(`artwork/${art.slug}`)}
                       className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-300 text-black font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-opacity"

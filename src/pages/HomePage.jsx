@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Palette, Sparkles, ArrowRight, Eye, ShieldCheck, Truck, MessageCircle, Star } from 'lucide-react';
 import { ARTWORKS_DATA, ARTIST_BIO } from '../data/artworks';
 
-export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry }) {
+export default function HomePage({ navigateTo, onOpenInquiry }) {
   const featuredArtworks = ARTWORKS_DATA.filter(a => a.featured).slice(0, 4);
   const heroImages = featuredArtworks.length > 0 ? featuredArtworks : ARTWORKS_DATA.slice(0, 4);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
@@ -176,13 +176,7 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
                     ₹{art.price.toLocaleString('en-IN')}
                   </span>
                   <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => onOpenWallModal(art)}
-                      className="p-2 rounded-lg bg-stone-800 text-stone-300 hover:text-amber-300 hover:bg-stone-700 transition-colors"
-                      title="Visualize on Wall"
-                    >
-                      <Eye className="w-4 h-4" />
-                    </button>
+
                     <button
                       onClick={() => navigateTo(`artwork/${art.slug}`)}
                       className="px-3 py-1.5 rounded-lg bg-amber-500/15 text-amber-300 text-xs font-semibold hover:bg-amber-500 hover:text-black transition-all"
@@ -198,46 +192,7 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
         </div>
       </section>
 
-      {/* Interactive Wall Visualizer Banner */}
-      <section className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="relative rounded-3xl overflow-hidden glass-panel border border-amber-500/30 p-8 lg:p-14">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-7 space-y-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Interactive Studio Tool</span>
-              <h2 className="font-serif-heading text-3xl sm:text-4xl font-bold text-white">
-                Visualize Art On Your Living Room Wall Before Collecting
-              </h2>
-              <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
-                Wondering how a 24×20 inch canvas will look on your wall color? Use our interactive room preview tool to test frame styles and wall shades instantly.
-              </p>
-              <div className="pt-2">
-                <button
-                  onClick={() => onOpenWallModal(ARTWORKS_DATA[0])}
-                  className="px-6 py-3 rounded-full bg-amber-500 text-black font-bold text-xs uppercase tracking-wider hover:bg-amber-400 transition-all flex items-center gap-2"
-                >
-                  <Eye className="w-4 h-4" />
-                  Launch Room Visualizer Tool
-                </button>
-              </div>
-            </div>
 
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-sm rounded-2xl overflow-hidden border border-amber-500/40 shadow-2xl wall-bg-cream p-6 text-center">
-                <img
-                  src="/artworks/crown-never-asked.jpg"
-                  alt="Room mockup"
-                  className="w-48 mx-auto shadow-2xl border-4 border-black"
-                />
-                <span className="inline-block mt-4 text-[10px] font-bold uppercase tracking-widest text-stone-800 bg-white/70 px-3 py-1 rounded-full">
-                  Live Wall Color Preview
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       {/* Commission CTA Banner */}
       <section className="max-w-7xl mx-auto px-4 lg:px-8">

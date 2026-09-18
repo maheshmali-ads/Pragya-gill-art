@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WallVisualizerModal from './components/WallVisualizerModal';
+
 import InquiryDrawer from './components/InquiryDrawer';
 
 import HomePage from './pages/HomePage';
@@ -15,8 +15,7 @@ import { ARTWORKS_DATA } from './data/artworks';
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState('home');
-  const [selectedWallArt, setSelectedWallArt] = useState(null);
-  const [isWallModalOpen, setIsWallModalOpen] = useState(false);
+
   const [selectedInquiryArt, setSelectedInquiryArt] = useState(null);
   const [isInquiryDrawerOpen, setIsInquiryDrawerOpen] = useState(false);
 
@@ -38,10 +37,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleOpenWallModal = (artwork) => {
-    setSelectedWallArt(artwork);
-    setIsWallModalOpen(true);
-  };
+
 
   const handleOpenInquiry = (artwork) => {
     setSelectedInquiryArt(artwork || ARTWORKS_DATA[0]);
@@ -55,7 +51,6 @@ export default function App() {
     pageContent = (
       <HomePage
         navigateTo={navigateTo}
-        onOpenWallModal={handleOpenWallModal}
         onOpenInquiry={handleOpenInquiry}
       />
     );
@@ -63,7 +58,6 @@ export default function App() {
     pageContent = (
       <CollectionPage
         navigateTo={navigateTo}
-        onOpenWallModal={handleOpenWallModal}
         onOpenInquiry={handleOpenInquiry}
       />
     );
@@ -73,7 +67,6 @@ export default function App() {
       <ArtworkDetailPage
         slug={slug}
         navigateTo={navigateTo}
-        onOpenWallModal={handleOpenWallModal}
         onOpenInquiry={handleOpenInquiry}
       />
     );
@@ -87,7 +80,6 @@ export default function App() {
     pageContent = (
       <HomePage
         navigateTo={navigateTo}
-        onOpenWallModal={handleOpenWallModal}
         onOpenInquiry={handleOpenInquiry}
       />
     );
@@ -104,12 +96,7 @@ export default function App() {
       <Footer navigateTo={navigateTo} />
 
       {/* Global Modals */}
-      <WallVisualizerModal
-        artwork={selectedWallArt}
-        isOpen={isWallModalOpen}
-        onClose={() => setIsWallModalOpen(false)}
-        onOpenInquiry={handleOpenInquiry}
-      />
+
 
       <InquiryDrawer
         artwork={selectedInquiryArt}
