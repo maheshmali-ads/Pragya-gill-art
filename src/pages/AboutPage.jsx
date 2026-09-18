@@ -24,7 +24,7 @@ export default function AboutPage({ navigateTo }) {
         <div className="lg:col-span-5 relative">
           <div className="relative rounded-3xl overflow-hidden border border-amber-500/30 shadow-2xl glass-panel">
             <img
-              src="/pragya-selfi.png"
+              src="/pragya-selfie.png"
               alt="Pragya Gill"
               className="w-full h-[500px] object-cover object-top"
             />
