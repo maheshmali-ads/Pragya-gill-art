@@ -33,7 +33,7 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
               Original Physical Artworks & Commissions
             </div>
 
-            <h1 className="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+            <h1 className="font-serif-heading text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
               Fine Art That Feels Personal, Capturing <span className="gold-gradient-text">Raw Emotion</span> on Canvas
             </h1>
 
@@ -41,10 +41,10 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
               Explore 100% hand-painted acrylic & oil masterpieces on heavy canvas board by fine artist <strong className="text-white font-medium">Pragya Gill</strong>. Delivered worldwide with wax-sealed Certificates of Authenticity.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
               <button
                 onClick={() => navigateTo('collections')}
-                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-300 text-black font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-all shadow-xl shadow-amber-500/15 flex items-center gap-2"
+                className="w-full sm:w-auto justify-center px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-300 text-black font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-all shadow-xl shadow-amber-500/15 flex items-center gap-2"
               >
                 Explore All 15 Artworks
                 <ArrowRight className="w-4 h-4" />
@@ -52,16 +52,16 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
               
               <button
                 onClick={() => navigateTo('commission')}
-                className="px-7 py-3.5 rounded-full border border-stone-700 bg-stone-900/60 text-white font-semibold text-xs uppercase tracking-wider hover:border-amber-400 hover:text-amber-300 transition-all"
+                className="w-full sm:w-auto justify-center px-7 py-3.5 rounded-full border border-stone-700 bg-stone-900/60 text-white font-semibold text-xs uppercase tracking-wider hover:border-amber-400 hover:text-amber-300 transition-all flex items-center"
               >
                 Commission Custom Art
               </button>
             </div>
 
             {/* Quick Stats */}
-            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-stone-800/80 text-xs">
+            <div className="pt-8 grid grid-cols-3 gap-2 sm:gap-6 border-t border-stone-800/80 text-[10px] sm:text-xs">
               <div>
-                <span className="font-cinzel text-xl font-bold text-amber-400 block">15+</span>
+                <span className="font-cinzel text-lg sm:text-xl font-bold text-amber-400 block">15+</span>
                 <span className="text-stone-400">Original Masterpieces</span>
               </div>
               <div>
@@ -76,7 +76,7 @@ export default function HomePage({ navigateTo, onOpenWallModal, onOpenInquiry })
           </div>
 
           {/* Right Hero Image Card */}
-          <div className="lg:col-span-5 relative z-10 h-[460px]">
+          <div className="lg:col-span-5 relative z-10 h-[300px] sm:h-[400px] lg:h-[460px] mt-8 lg:mt-0">
             <div className="relative group h-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-amber-200/40 rounded-3xl blur-md opacity-40 group-hover:opacity-75 transition duration-500" />
               <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-stone-900 shadow-2xl h-full">

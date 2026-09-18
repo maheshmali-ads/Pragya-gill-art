@@ -54,11 +54,11 @@ export default function CollectionPage({ navigateTo, onOpenWallModal, onOpenInqu
           </div>
 
           {/* Availability & Sort Dropdowns */}
-          <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
             <select
               value={availabilityFilter}
               onChange={(e) => setAvailabilityFilter(e.target.value)}
-              className="px-3.5 py-2.5 rounded-xl bg-stone-900 border border-stone-800 text-xs text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
+              className="w-full sm:w-auto px-3.5 py-2.5 rounded-xl bg-stone-900 border border-stone-800 text-xs text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
             >
               <option value="All">All Status (Available & Sold)</option>
               <option value="Available">Available Only</option>
@@ -68,7 +68,7 @@ export default function CollectionPage({ navigateTo, onOpenWallModal, onOpenInqu
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="px-3.5 py-2.5 rounded-xl bg-stone-900 border border-stone-800 text-xs text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
+              className="w-full sm:w-auto px-3.5 py-2.5 rounded-xl bg-stone-900 border border-stone-800 text-xs text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
             >
               <option value="featured">Featured First</option>
               <option value="price-low">Price: Low to High</option>
@@ -79,12 +79,12 @@ export default function CollectionPage({ navigateTo, onOpenWallModal, onOpenInqu
         </div>
 
         {/* Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pt-2 border-t border-stone-800/60 pb-1 scrollbar-none">
+        <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-800/60 pb-1">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 selectedCategory === cat
                   ? 'bg-amber-500 text-black shadow-md shadow-amber-500/20'
                   : 'bg-stone-900 text-stone-400 hover:text-white hover:bg-stone-800'

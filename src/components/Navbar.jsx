@@ -86,13 +86,13 @@ export default function Navbar({ currentRoute, navigateTo }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-panel mt-3 rounded-2xl p-6 border border-amber-500/20 animate-fade-in">
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-stone-900/95 backdrop-blur-xl border-b border-amber-500/20 p-6 animate-fade-in shadow-2xl">
+          <div className="flex flex-col gap-4 max-w-7xl mx-auto">
             {navLinks.map((link) => (
               <button
                 key={link.route}
                 onClick={() => handleNav(link.route)}
-                className={`text-left text-base font-medium py-2 px-3 rounded-lg transition-colors ${
+                className={`text-left text-base font-medium py-3 px-4 rounded-xl transition-colors ${
                   currentRoute === link.route
                     ? 'bg-amber-500/20 text-amber-300 font-semibold'
                     : 'text-stone-300 hover:bg-stone-800/50'
@@ -101,12 +101,12 @@ export default function Navbar({ currentRoute, navigateTo }) {
                 {link.name}
               </button>
             ))}
-            <div className="pt-4 border-t border-stone-800">
+            <div className="pt-4 border-t border-stone-800/80 mt-2">
               <a
                 href={ARTIST_BIO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-amber-500 text-black font-semibold text-sm"
+                className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-amber-500 text-black font-semibold text-sm shadow-lg shadow-amber-500/20"
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp Studio Inquiry

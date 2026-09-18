@@ -35,7 +35,7 @@ export default function App() {
   const navigateTo = (route) => {
     window.location.hash = route;
     setCurrentRoute(route);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleOpenWallModal = (artwork) => {
