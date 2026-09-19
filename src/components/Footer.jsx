@@ -120,8 +120,9 @@ export default function Footer({ navigateTo }) {
 
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+      <div className="max-w-7xl mx-auto pt-8 border-t border-stone-900 flex flex-col md:flex-row items-center justify-between text-xs text-stone-500 gap-4 text-center md:text-left">
         <p>© {new Date().getFullYear()} Pragya Gill Fine Art Studio. All rights reserved.</p>
+        <p>Created by <a href="https://www.linkedin.com/in/maheshmaliii/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-amber-400 transition-colors underline decoration-stone-700 underline-offset-4">Mahesh Mali</a></p>
         <p className="tracking-widest uppercase">Handcrafted Fine Art | Global Delivery</p>
       </div>
     </footer>
